@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customized Error Messages | Amazing Mini Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="fade-in">Customized Error Messages</h1>
+        <p class="fade-in delay-1">A Modern Frontend Mini Project With Animations</p>
+        <br>
+        <br>
+        <a href="#definition" class="scroll-btn fade-in delay-2">Explore More ↓</a>
+    </div>
+</section>
+
+
+<section class="section" id="definition">
+    <h2 class="title">What Are Customized Error Messages?</h2>
+    <p class="text fade-in">
+        Customized error messages are clear, meaningful, user-friendly messages that guide the user when input is wrong,
+        the server fails, or system rules are broken. They improve UX, reduce frustration, and make the app professional.
+    </p>
+</section>
+
+
+<section class="section" id="types">
+    <h2 class="title">Types of Error Messages</h2>
+
+    <div class="grid">
+        <div class="card fade-in">
+            <h3>Form Validation Errors</h3>
+            <p>Invalid email, wrong password, empty fields, OTP error.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>Authentication Errors</h3>
+            <p>Incorrect login, session expired, too many attempts.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>API / Server Errors</h3>
+            <p>404 Not Found, 500 Server Error, Network failure.</p>
+        </div>
+
+        <div class="card fade-in">
+            <h3>Input Format Errors</h3>
+            <p>Only numbers, invalid mobile, wrong file type.</p>
+        </div>
+    </div>
+
+    <button id="showErrorsBtn" class="primary-btn fade-in">Show All Error Messages</button>
+
+    <div id="errorList" class="error-list fade-in hidden"></div>
+</section>
+
+
+<section class="section" id="demo">
+    <h2 class="title">Live Form Error Message Demo</h2>
+
+    <div class="form-box fade-in">
+        <form id="loginForm">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter Email">
+            <p class="error" id="emailError"></p>
+
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+            <p class="error" id="passwordError"></p>
+
+            <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <p id="successMessage" class="success"></p>
+    </div>
+
+    <div class="api-box fade-in">
+        <h3>API Error Demo</h3>
+        <button id="apiButton" class="secondary-btn">Fetch Data</button>
+        <p id="apiError" class="error"></p>
+    </div>
+</section>
+
+<section class="error-section">
+  <h2>Payment Errors & Troubleshooting</h2>
+  
+  <div class="accordion">
+    <button class="accordion-btn">1. Network / Connectivity Error</button>
+    <div class="accordion-content">
+      <p><strong>What it is:</strong> The payment failed due to poor internet or server timeout.</p>
+      <p><strong>Causes:</strong> Slow network, server unavailable, API timeout.</p>
+      <p><strong>Solution:</strong> Check your internet connection, retry the payment, or wait a few minutes.</p>
+    </div>
+
+    <button class="accordion-btn">2. Insufficient Funds</button>
+    <div class="accordion-content">
+      <p><strong>What it is:</strong> Payment was declined due to lack of balance in your card or wallet.</p>
+      <p><strong>Causes:</strong> Low bank balance, card limit reached, or wallet empty.</p>
+      <p><strong>Solution:</strong> Ensure sufficient balance or use a different payment method.</p>
+    </div>
+
+    <button class="accordion-btn">3. Card / UPI Authentication Failed</button>
+    <div class="accordion-content">
+      <p><strong>What it is:</strong> Payment could not be authenticated by your bank or UPI app.</p>
+      <p><strong>Causes:</strong> Wrong OTP, expired card, or bank system issue.</p>
+      <p><strong>Solution:</strong> Re-enter details carefully, check card expiry, or try another payment method.</p>
+    </div>
+
+    <button class="accordion-btn">4. Payment Gateway Timeout</button>
+    <div class="accordion-content">
+      <p><strong>What it is:</strong> The payment processor did not respond in time.</p>
+      <p><strong>Causes:</strong> High server load, network latency, or gateway downtime.</p>
+      <p><strong>Solution:</strong> Retry after some time or switch payment gateway.</p>
+    </div>
+  </div>
+
+  <h2>Potential Problems That Can Cost You</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <h4>Failed Transactions</h4>
+        <p>Repeated failed payments may result in lost orders and delays.</p>
+      </div>
+      <div class="carousel-item">
+        <h4>Transaction Fees</h4>
+        <p>Some gateways may charge for failed attempts.</p>
+      </div>
+      <div class="carousel-item">
+        <h4>Customer Frustration</h4>
+        <p>Payment issues lead to a poor shopping experience.</p>
+      </div>
+      <div class="carousel-item">
+        <h4>Delayed Deliveries</h4>
+        <p>Failed payments delay order confirmation and shipping.</p>
+      </div>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+<footer>
+    <p>Made by Vinoth Kumar S © 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
