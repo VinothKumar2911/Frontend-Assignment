@@ -152,5 +152,4 @@ Everything is demonstrated visually with animations and a modern layout.
 
 ---
 
-# 📁 **Folder Structure**
 
