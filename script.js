@@ -1,4 +1,22 @@
+// -------------------------------
+// FORM INPUT REFERENCES
+// -------------------------------
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
 
+const emailError = document.getElementById("emailError");
+const passwordError = document.getElementById("passwordError");
+const successMessage = document.getElementById("successMessage");
+
+// -------------------------------
+// API BUTTON REFERENCES
+// -------------------------------
+const apiButton = document.getElementById("apiButton");
+const apiError = document.getElementById("apiError");
+
+// -------------------------------
+// SHOW ALL CUSTOM ERRORS
+// -------------------------------
 document.getElementById("showErrorsBtn").addEventListener("click", () => {
     document.getElementById("errorList").innerHTML = `
         <h3>All Customized Error Messages</h3>
@@ -19,6 +37,9 @@ document.getElementById("showErrorsBtn").addEventListener("click", () => {
 });
 
 
+// -------------------------------
+// LOGIN FORM VALIDATION
+// -------------------------------
 document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -53,6 +74,9 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 });
 
 
+// -------------------------------
+// API ERROR TEST BUTTON
+// -------------------------------
 apiButton.addEventListener("click", () => {
     fetch("https://invalid-api-123123.com")
         .catch(() => {
@@ -60,40 +84,53 @@ apiButton.addEventListener("click", () => {
         });
 });
 
+
+// -------------------------------
+// ACCORDION
+// -------------------------------
 const accBtns = document.querySelectorAll(".accordion-btn");
 accBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const content = btn.nextElementSibling;
     const isOpen = content.style.display === "block";
-    document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
+
+    document.querySelectorAll(".accordion-content")
+            .forEach(c => c.style.display = "none");
+
     content.style.display = isOpen ? "none" : "block";
   });
 });
 
 
+// -------------------------------
+// CAROUSEL
+// -------------------------------
 const track = document.querySelector('.carousel-track');
-const items = Array.from(track.children);
+const items = Array.from(track ? track.children : []);
+
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 let currentIndex = 0;
 
 function updateCarousel() {
+  if (!items.length) return;
   const width = items[0].getBoundingClientRect().width;
   track.style.transform = `translateX(-${currentIndex * width}px)`;
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-  updateCarousel();
-});
+if (prevBtn && nextBtn && track && items.length > 0) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+      updateCarousel();
+    });
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-  updateCarousel();
-});
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+      updateCarousel();
+    });
 
-
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % items.length;
-  updateCarousel();
-}, 5000);
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    }, 5000);
+}
